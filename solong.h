@@ -2,7 +2,7 @@
 # define SOLONG_H
 
 
-
+#include <stdio.h>
 #include "player.h"
 
 

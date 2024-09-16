@@ -21,8 +21,8 @@ int main (void)
 	mlx_loop_hook(data.mlx, ft_hook_keys, &data);
 	mlx_key_hook(data.mlx, key_hook, &data);
 
+
 	mlx_loop(data.mlx);
 	mlx_terminate(data.mlx);
-	printf("hello i am alive2\n");
 	return (EXIT_SUCCESS);
 }
