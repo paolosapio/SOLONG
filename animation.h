@@ -17,6 +17,6 @@ typedef struct s_animation
 void		animation_next_texture(t_animation *animation);
 t_animation	*init_animation(mlx_t *mlx, int n_frames, char **pat_png);
 void		animation_update(t_animation *animation);
-void		destoy_animation(mlx_t *mlx, t_animation *animation);
+void		destroy_animation(mlx_t *mlx, t_animation *animation);
 
 #endif

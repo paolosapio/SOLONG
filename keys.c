@@ -4,30 +4,30 @@
 #include "solong.h"
 
 
-void ft_hook_keys(void *data2)
+void ft_hook_keys(void *game2)
 {
-	t_mlx_player *data;
+	t_game *game;
 
-	data = data2;
-	if (mlx_is_key_down(data->mlx, MLX_KEY_ESCAPE))
-		mlx_close_window(data->mlx);
-	if (mlx_is_key_down(data->mlx, MLX_KEY_UP))
-		move_up(data->player);
-	if (mlx_is_key_down(data->mlx, MLX_KEY_DOWN))
-		move_down(data->player);
-	if (mlx_is_key_down(data->mlx, MLX_KEY_LEFT))
-		move_left(data->player);
-	if (mlx_is_key_down(data->mlx, MLX_KEY_RIGHT))
-		move_right(data->player);
-	if (mlx_is_key_down(data->mlx, MLX_KEY_LEFT_SHIFT))
-		turbo_shift(data->player);
+	game = game2;
+	if (mlx_is_key_down(game->mlx, MLX_KEY_ESCAPE))
+		mlx_close_window(game->mlx);
+	if (mlx_is_key_down(game->mlx, MLX_KEY_UP))
+		move_up(game->player);
+	if (mlx_is_key_down(game->mlx, MLX_KEY_DOWN))
+		move_down(game->player);
+	if (mlx_is_key_down(game->mlx, MLX_KEY_LEFT))
+		move_left(game->player);
+	if (mlx_is_key_down(game->mlx, MLX_KEY_RIGHT))
+		move_right(game->player);
+	if (mlx_is_key_down(game->mlx, MLX_KEY_LEFT_SHIFT))
+		turbo_shift(game->player);
 }
 
-void key_hook(mlx_key_data_t keydata, void* data2)
+void key_hook(mlx_key_data_t keydata, void* game2)
 {
-	t_mlx_player *data;
+	t_game *game;
 
-	data = data2;
+	game = game2;
 	if (keydata.key == MLX_KEY_LEFT_SHIFT && keydata.action == MLX_RELEASE)
-		data->player->speed = 1;
+		game->player->speed = 1;
 }

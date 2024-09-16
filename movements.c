@@ -11,25 +11,21 @@ void turbo_shift(t_player *player)
 void move_up(t_player *player)
 {
 	player->y -= player->speed;
-	player->image_sprite->instances[0].y = player->y;
 }
 
 void move_down(t_player *player)
 {	
 	player->y += player->speed;
-	player->image_sprite->instances[0].y = player->y;
 }
 
 void move_left(t_player *player)
 {	
 	player->x -= player->speed;
-	player->image_sprite->instances[0].x = player->x;
 }
 
 void move_right(t_player *player)
 {
 	player->x += player->speed;
-	player->image_sprite->instances[0].x = player->x;
 }
 
 void walking_speed(t_player *player)

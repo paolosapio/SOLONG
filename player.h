@@ -14,15 +14,11 @@ typedef struct	s_player
 
 }				t_player;
 
-
-
-typedef struct mlx_player
+typedef struct game
 {
 	t_player	*player;
 	mlx_t		*mlx;
-}				t_mlx_player;
-
-
+}				t_game;
 
 t_player    *init_player(void	*mlx);
 
@@ -33,5 +29,6 @@ void        move_down(t_player *player);
 void        move_left(t_player *player);
 void        move_right(t_player *player);
 void        walking_speed(t_player *player);
+void		update_player(t_player *player);
 
 #endif

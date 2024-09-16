@@ -6,8 +6,7 @@
 
 void destroy_player(mlx_t *mlx, t_player *player)
 {
-	mlx_delete_image(mlx, player->image_sprite);
+	destroy_animation(mlx, player->animation);
 	free(player);
-
 	return ;
 }

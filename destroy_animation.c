@@ -1,7 +1,7 @@
 #include "animation.h"
 #include <stdlib.h>
 
-void destoy_animation(mlx_t *mlx, t_animation *animation)
+void destroy_animation(mlx_t *mlx, t_animation *animation)
 {
     int i;
 

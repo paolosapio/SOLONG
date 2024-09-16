@@ -16,5 +16,6 @@ t_animation *init_animation(mlx_t *mlx, int n_frames, char **pat_png)
     animation->image = mlx_texture_to_image(mlx, animation->textures[0]);
     animation->speed_frame = 1;
     animation->current_frame = 0;
+    mlx_image_to_window(mlx, animation->image, 0, 0);
     return (animation);
 }
