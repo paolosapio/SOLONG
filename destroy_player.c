@@ -6,7 +6,15 @@
 
 void destroy_player(mlx_t *mlx, t_player *player)
 {
-	destroy_animation(mlx, player->animation);
+	int i;
+
+	i= 0;
+	while (i < player->number_of_animations)
+	{
+		destroy_animation(mlx, player->animations[i]);
+		i++;
+	}
+	free(player->animations);
 	free(player);
 	return ;
 }

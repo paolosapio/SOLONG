@@ -29,5 +29,7 @@ void key_hook(mlx_key_data_t keydata, void* game2)
 
 	game = game2;
 	if (keydata.key == MLX_KEY_LEFT_SHIFT && keydata.action == MLX_RELEASE)
-		game->player->speed = 1;
+		walking_speed(game->player);
+//	if (keydata.key == MLX_KEY_RIGHT && keydata.action == MLX_RELEASE)
+
 }

@@ -10,7 +10,8 @@ typedef struct	s_player
 	int				x;
 	int				y;
 	int				speed;
-	t_animation		*animation;
+	t_animation		**animations;
+	int number_of_animations;
 
 }				t_player;
 

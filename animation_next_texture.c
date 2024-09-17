@@ -5,8 +5,8 @@
 
 void animation_next_texture(t_animation *animation)
 {
-	int index;
-	index = animation->current_frame % animation->total_texture; // AQUI he solucionado inicializando total teexure
-	ft_memmove(animation->image->pixels, animation->textures[index]->pixels, animation->textures[index]->width * animation->textures[index]->height * sizeof(int));
+	if (animation->current_texture == animation->total_texture)
+		animation->current_texture = 0;
+	ft_memmove(animation->image->pixels, animation->textures[animation->current_texture]->pixels, animation->textures[animation->current_texture]->width * animation->textures[animation->current_texture]->height * sizeof(int));
 	animation->current_texture++;
 }
