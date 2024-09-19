@@ -18,7 +18,10 @@ void ft_hook_keys(void *game2)
 	if (mlx_is_key_down(game->mlx, MLX_KEY_LEFT))
 		move_left(game->player);
 	if (mlx_is_key_down(game->mlx, MLX_KEY_RIGHT))
+	{
 		move_right(game->player);
+		game->player->animation_status = 1;
+	}
 	if (mlx_is_key_down(game->mlx, MLX_KEY_LEFT_SHIFT))
 		turbo_shift(game->player);
 }
@@ -30,6 +33,8 @@ void key_hook(mlx_key_data_t keydata, void* game2)
 	game = game2;
 	if (keydata.key == MLX_KEY_LEFT_SHIFT && keydata.action == MLX_RELEASE)
 		walking_speed(game->player);
+	if (keydata.key == MLX_KEY_RIGHT && keydata.action == MLX_RELEASE)
+		game->player->animation_status = 0;
 //	if (keydata.key == MLX_KEY_RIGHT && keydata.action == MLX_RELEASE)
 
 }

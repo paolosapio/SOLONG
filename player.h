@@ -11,14 +11,15 @@ typedef struct	s_player
 	int				y;
 	int				speed;
 	t_animation		**animations;
-	int number_of_animations;
-
-}				t_player;
+	int				number_of_animations;
+	int				animation_status;
+	mlx_image_t		*image;
+}					t_player;
 
 typedef struct game
 {
-	t_player	*player;
 	mlx_t		*mlx;
+	t_player	*player;
 }				t_game;
 
 t_player    *init_player(void	*mlx);

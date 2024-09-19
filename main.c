@@ -27,7 +27,7 @@ int main (void)
 	return (EXIT_SUCCESS);
 }
 
-//en update player le pasaremos la animacion que queremos proyectar en la imagen del jugador
-//el jugador necessita una variable para saber en que animacion estamos
-//el jugador tiene que querear una imagen (que hara se esta creando dentro de la cada animacion)
-// y todas las animaciones tienen que apuntar a la misma imagen,
+
+//arreglar la funcion key hook que sea la buena solamente
+
+//preparar animacioonee arriba y abajo
