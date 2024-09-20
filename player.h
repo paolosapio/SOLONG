@@ -5,6 +5,15 @@
 #include <stdlib.h>
 #include "animation.h"
 
+#define PLAYER_LEFT				1
+#define PLAYER_RIGHT			2
+#define PLAYER_UP				3
+#define PLAYER_DOWN				4
+#define PLAYER_STOP_RIGHT		0
+#define PLAYER_STOP_LEFT		5
+#define PLAYER_STOP_UP			6
+#define PLAYER_STOP_DOWN		7
+
 typedef struct	s_player
 {
 	int				x;
@@ -14,6 +23,7 @@ typedef struct	s_player
 	int				number_of_animations;
 	int				animation_status;
 	mlx_image_t		*image;
+	int				switch_button;
 }					t_player;
 
 typedef struct game
@@ -32,5 +42,6 @@ void        move_left(t_player *player);
 void        move_right(t_player *player);
 void        walking_speed(t_player *player);
 void		update_player(t_player *player);
+void		path_breath(t_player *player);
 
 #endif
