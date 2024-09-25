@@ -24,8 +24,6 @@ void key_hook(mlx_key_data_t keydata, void* game2)
 	}
 
 
-
-
 	if (keydata.key == MLX_KEY_DOWN && keydata.action == MLX_PRESS)
 	{
 		game->player->switch_button = PLAYER_DOWN;
@@ -37,6 +35,7 @@ void key_hook(mlx_key_data_t keydata, void* game2)
 		game->player->animation_status = PLAYER_STOP_RIGHT;
 	}
 
+
 	if (keydata.key == MLX_KEY_RIGHT && keydata.action == MLX_PRESS)
 	{
 		game->player->switch_button = PLAYER_RIGHT;
@@ -47,7 +46,6 @@ void key_hook(mlx_key_data_t keydata, void* game2)
 		game->player->switch_button = PLAYER_STOP_RIGHT;
 		game->player->animation_status = PLAYER_STOP_RIGHT;
 	}
-
 
 
 	if (keydata.key == MLX_KEY_LEFT && keydata.action == MLX_PRESS)

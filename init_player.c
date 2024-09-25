@@ -14,17 +14,9 @@ t_player *init_player(void	*mlx)
 	player->x = 1280 / 2;
 	player->y = 720 / 2;
 	player->speed = 3;
-    player->number_of_animations = 3;
+    player->number_of_animations = 6;
     player->animation_status = 0;
     player->switch_button = 0;
-/*
-    paths_breath_left[0] = "sprites/billyboy/to_left/breath/01.png";
-    paths_breath_left[1] = "sprites/billyboy/to_left/breath/02.png";
-    paths_breath_left[2] = "sprites/billyboy/to_left/breath/03.png";
-    paths_breath_left[3] = "sprites/billyboy/to_left/breath/04.png";
-    paths_breath_left[4] = "sprites/billyboy/to_left/breath/05.png";
-    paths_breath_left[5] = "sprites/billyboy/to_left/breath/06.png";
-*/
 
     paths_breath_left[0] = "sprites/billyboy/to_left/breath/01.png";
     paths_breath_left[1] = "sprites/billyboy/to_left/breath/02.png";
