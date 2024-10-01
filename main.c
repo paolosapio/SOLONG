@@ -5,7 +5,7 @@
 
 
 
-int main (void)
+int main (int argn, char **argv)
 {
 	t_game data;
 	char *path_valdosa;
@@ -13,7 +13,12 @@ int main (void)
 	mlx_image_t *image;
 	mlx_image_t *image2;
 
-	data.mlx = mlx_init(WIDTH, HEIGHT, "HOLA JAVI", false);
+	//verificar que tenga el path corecto!
+    	 char **str_map = read_n_copy_map(argv[1]);
+
+
+	data.map = init_map(str_map);
+	data.mlx = mlx_init(data.map->width * 32, data.map->height * 32, "HOLA JAVI", false);
 	if (!data.mlx)
 		return (0);
 
@@ -21,8 +26,8 @@ int main (void)
 //	hacer una funcion que ponga bloques en todaa la imagen
 
 
+	
 	maps_of_blocks(&data);
-
 
 	data.player = init_player(data.mlx);
 

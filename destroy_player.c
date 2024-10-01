@@ -3,7 +3,6 @@
 #include "MLX42/include/MLX42/MLX42.h"
 #include "solong.h"
 
-
 void destroy_player(mlx_t *mlx, t_player *player)
 {
 	int i;

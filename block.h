@@ -1,6 +1,9 @@
-#include "MLX42/include/MLX42/MLX42.h"
-#include <stdlib.h>
-#include "animation.h"
+#ifndef BLOCK_H
+# define BLOCK_H
+
+# include "MLX42/include/MLX42/MLX42.h"
+# include <stdlib.h>
+# include "animation.h"
 
 typedef struct	s_block
 {
@@ -10,3 +13,5 @@ typedef struct	s_block
 	int				collision;
 	
 }					t_block;
+
+#endif
