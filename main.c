@@ -1,43 +1,31 @@
 #include <stdlib.h>
 #include "player.h"
 #include "solong.h"
+#include "parser.h"
 #include "MLX42/include/MLX42/MLX42.h"
 
 
 
 int main (int argn, char **argv)
 {
-	t_game data;
-	char *path_valdosa;
-	mlx_texture_t *textura;
-	mlx_image_t *image;
-	mlx_image_t *image2;
-
-	//verificar que tenga el path corecto!
-    	 char **str_map = read_n_copy_map(argv[1]);
-
-
-	data.map = init_map(str_map);
+	t_game			data;
+	t_parser		*parser;
+	parser = parser_map(argv[1]);
+	data.map = init_map(parser->str_map);
 	data.mlx = mlx_init(data.map->width * 32, data.map->height * 32, "HOLA JAVI", false);
 	if (!data.mlx)
 		return (0);
 
-//	hacer un block.h paara gestionar el mapa
-//	hacer una funcion que ponga bloques en todaa la imagen
-
-
-	
-	maps_of_blocks(&data);
-
+	paint_map(data.mlx, data.map);
 	data.player = init_player(data.mlx);
-
+	data.player->x = parser->player.x;
+	data.player->y = parser->player.y;
 	mlx_loop_hook(data.mlx, update_player, data.player);
 	mlx_key_hook(data.mlx, key_hook, &data);
-
-
-	 mlx_loop(data.mlx);
-	// mlx_terminate(data.mlx);
+	mlx_loop(data.mlx);
+	mlx_terminate(data.mlx);
 	return (EXIT_SUCCESS);
 }
 
-//crear un estring que segun si el caracter es 1 o 0 ponga distintas texturas
+//crear un parser
+//una idea es crear una estructura del archibo parseado, el parser acepta un fd o un path y devuelve los datos de como crear el mapa

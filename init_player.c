@@ -1,6 +1,6 @@
 #include "player.h"
 
-t_player *init_player(void	*mlx)
+t_player *init_player(mlx_t	*mlx)
 {
 	t_player    *player;
     char        *paths_walk_to_up[5];
@@ -10,9 +10,9 @@ t_player *init_player(void	*mlx)
     char        *paths_breath_left[6];
     char        *paths_breath_right[6];
 
-	player = malloc(sizeof(t_player));//proteger
-	player->x = 1280 / 2;
-	player->y = 720 / 2;
+	player = malloc(sizeof(t_player));
+	player->x = 0;
+	player->y = 0;
 	player->speed = 3;
     player->number_of_animations = 6;
     player->animation_status = 0;

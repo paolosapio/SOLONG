@@ -34,7 +34,7 @@ typedef struct game
 	t_map		*map;
 }				t_game;
 
-t_player    *init_player(void	*mlx);
+t_player    *init_player(mlx_t	*mlx);
 
 void        destroy_player(mlx_t *mlx, t_player *player);
 void        turbo_shift(t_player *player);
