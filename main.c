@@ -8,9 +8,14 @@
 
 int main (int argn, char **argv)
 {
+	if(argn != 2)
+		return(printf("EL MAPA, COÑO\n"), 1);
 	t_game			data;
 	t_parser		*parser;
 	parser = parser_map(argv[1]);
+	if (parser == NULL)
+		return (EXIT_FAILURE);
+
 	data.map = init_map(parser->str_map);
 	data.mlx = mlx_init(data.map->width * 32, data.map->height * 32, "HOLA JAVI", false);
 	if (!data.mlx)
@@ -28,4 +33,3 @@ int main (int argn, char **argv)
 }
 
 //crear un parser
-//una idea es crear una estructura del archibo parseado, el parser acepta un fd o un path y devuelve los datos de como crear el mapa

@@ -7,5 +7,11 @@ typedef struct s_coordinate
     int y;
 }   t_coordinate;
 
+typedef struct s_collectible
+{
+    int count;
+    
+}   t_collectible;
+
 
 #endif

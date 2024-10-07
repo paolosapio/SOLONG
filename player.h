@@ -46,5 +46,4 @@ void        walking_speed(t_player *player);
 void		update_player(t_player *player);
 void		path_breath(t_player *player);
 
-
 #endif
