@@ -15,6 +15,8 @@ t_parser *parser_map(char *path_map)
 		return (NULL); //liberar el mapa  **char (hacer una funcion qeu libera el pun ero doble)
 	if (check_closed_map(parser->str_map) == 1)
 		return (NULL); //liberar el mapa  **char (hacer una funcion qeu libera el pun ero doble)
+	if (flood_fill(parser->str_map) == 1)
+			return (NULL);
 	while (parser->str_map[y] != NULL)
 	{
 		x = 0;
@@ -73,8 +75,6 @@ int check_rectangle_map(char **map)
 	int i;
 
 	i = 0;
-
-	
 	while ((map[i] != NULL) && map[i + 1] != NULL)
 	{
 		if (ft_strlen(map[i]) != ft_strlen(map[i + 1]))

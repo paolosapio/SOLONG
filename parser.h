@@ -15,5 +15,6 @@ typedef struct	s_parser
 t_parser	*parser_map(char *path_map);
 int			check_rectangle_map(char **map);
 int			check_closed_map(char **map);
+int			flood_fill(char **map);
 
 #endif
