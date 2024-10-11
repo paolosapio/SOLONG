@@ -8,7 +8,6 @@ typedef struct	s_parser
 {
 	t_coordinate	player;
 	t_coordinate	exit;
-	//t_collectables	collectables;
 	char			**str_map;
 }   t_parser;
 

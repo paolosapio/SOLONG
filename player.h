@@ -24,26 +24,23 @@ typedef struct	s_player
 	int				animation_status;
 	mlx_image_t		*image;
 	int				switch_button;
+	t_hitbox		hitbox;
 }					t_player;
-
-
-typedef struct game
-{
-	mlx_t		*mlx;
-	t_player	*player;
-	t_map		*map;
-}				t_game;
 
 t_player    *init_player(mlx_t	*mlx);
 
 void        destroy_player(mlx_t *mlx, t_player *player);
 void        turbo_shift(t_player *player);
-void        move_up(t_player *player);
-void        move_down(t_player *player);
-void        move_left(t_player *player);
-void        move_right(t_player *player);
+void        move_up(t_player *player, t_map *map);
+void        move_down(t_player *player, t_map *map);
+void        move_left(t_player *player, t_map *map);
+void        move_right(t_player *player, t_map *map);
 void        walking_speed(t_player *player);
-void		update_player(t_player *player);
+void		update_player(t_player *player, t_map *map);
 void		path_breath(t_player *player);
+int			is_collision_up(t_player *player, t_map *map);
+int			is_collision_down(t_player *player, t_map *map);
+int			is_collision_left(t_player *player, t_map *map);
+int			is_collision_right(t_player *player, t_map *map);
 
 #endif

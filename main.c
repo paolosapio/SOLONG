@@ -25,7 +25,7 @@ int main (int argn, char **argv)
 	data.player = init_player(data.mlx);
 	data.player->x = parser->player.x;
 	data.player->y = parser->player.y;
-	mlx_loop_hook(data.mlx, update_player, data.player);
+	mlx_loop_hook(data.mlx, update_game, &data);
 	mlx_key_hook(data.mlx, key_hook, &data);
 	mlx_loop(data.mlx);
 	destroy_map(data.map);
@@ -34,4 +34,6 @@ int main (int argn, char **argv)
 return (EXIT_SUCCESS);
 }
 
-//crear un parser
+//creaR UNA FUNCION EN MAP QUE RECIBA UNA COORDINADA Y DEVUELVA EL CHARACTER DEL MAPA DEL MAPA
+//DIVIDO LAS COORDINADAS POR 32 TANTO X QUE Y Y EL EL  RESULTADO DEL LA POSIZION EN LE MAPA.
+//EL PLAYER MANDARA SUS COORDINADA A ESTA FFUNCION Y SABRA SI TIENE QUE MOOVERSE O NO. SI ES L POSIOCION SIGUENTE PARED NO ITERA!
