@@ -8,15 +8,14 @@ void key_hook(mlx_key_data_t keydata, void* game2)
 	t_game *game;
 
 	game = game2;
-/*m
+
 	 if (keydata.key == MLX_KEY_LEFT_SHIFT && keydata.action == MLX_PRESS)
 	 {
-		game->player->animations[1]->speed_frame = 1;
-	 	game->player->speed = 7;
+		turbo_shift(game->player);
 	 }
 	 if (keydata.key == MLX_KEY_LEFT_SHIFT && keydata.action == MLX_RELEASE)
 	 	walking_speed(game->player);
-*/
+
 	if (keydata.key == MLX_KEY_UP && keydata.action == MLX_PRESS)
 	{
 		game->player->switch_button = PLAYER_UP;
@@ -63,6 +62,4 @@ void key_hook(mlx_key_data_t keydata, void* game2)
 		game->player->switch_button = PLAYER_STOP_LEFT;
 		game->player->animation_status = PLAYER_STOP_LEFT;
 	}
-//	if (keydata.key == MLX_KEY_RIGHT && keydata.action == MLX_RELEASE)
-
 }

@@ -5,9 +5,12 @@
 
 typedef struct	s_map
 {
-	int	    width;
-	int	    height;
-	char    **str_map;
+	int				width;
+	int	    		height;
+	char    		**str_map;
+	mlx_image_t		*image_paviment;
+	mlx_image_t		*image_pc;
+	mlx_image_t		*image_bottle;
 }   t_map;
 
 typedef struct	s_hitbox

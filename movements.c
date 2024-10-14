@@ -34,7 +34,7 @@ void move_right(t_player *player, t_map *map)
 }
 
 void walking_speed(t_player *player)
-{
-	player->speed = 3; 
-	player->animations[0]->speed_frame = 9;
+{ 
+	player->animations[0]->speed_frame = 10;
+	player->speed = 3;
 }

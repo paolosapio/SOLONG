@@ -33,7 +33,10 @@ int main (int argn, char **argv)
 	mlx_terminate(data.mlx);
 return (EXIT_SUCCESS);
 }
+//una funcion que reciba el mapa y una coordidas y qque cambie lo que haya en esta coordinada por la vldosa;
 
-//creaR UNA FUNCION EN MAP QUE RECIBA UNA COORDINADA Y DEVUELVA EL CHARACTER DEL MAPA DEL MAPA
-//DIVIDO LAS COORDINADAS POR 32 TANTO X QUE Y Y EL EL  RESULTADO DEL LA POSIZION EN LE MAPA.
-//EL PLAYER MANDARA SUS COORDINADA A ESTA FFUNCION Y SABRA SI TIENE QUE MOOVERSE O NO. SI ES L POSIOCION SIGUENTE PARED NO ITERA!
+
+
+//una funcion que detecte  si estoy en colision con el colectable;
+//una funcion cambie el caracter 'C' por el caracter '0';
+//una funcion que cconte cuantoo colectable has encontrado;
