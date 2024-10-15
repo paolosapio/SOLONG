@@ -18,6 +18,7 @@ int main (int argn, char **argv)
 
 	data.map = init_map(parser->str_map);
 	data.mlx = mlx_init(data.map->width * 32, data.map->height * 32, "HOLA JAVI", false);
+	data.map->mlx = data.mlx;
 	if (!data.mlx)
 		return (0);
 

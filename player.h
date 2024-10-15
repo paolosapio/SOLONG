@@ -27,6 +27,17 @@ typedef struct	s_player
 	t_hitbox		hitbox;
 }					t_player;
 
+typedef struct s_textures_files
+{
+	char        *paths_walk_to_up[5];
+    char        *paths_walk_to_down[4];
+    char        *paths_walk_to_right[8];
+    char        *paths_walk_to_left[8];
+    char        *paths_breath_left[6];
+    char        *paths_breath_right[6];
+
+}	t_textures_files;
+
 t_player    *init_player(mlx_t	*mlx);
 
 void        destroy_player(mlx_t *mlx, t_player *player);
@@ -42,5 +53,6 @@ int			is_collision_up(t_player *player, t_map *map);
 int			is_collision_down(t_player *player, t_map *map);
 int			is_collision_left(t_player *player, t_map *map);
 int			is_collision_right(t_player *player, t_map *map);
+void breath(t_textures_files *textures);
 
 #endif

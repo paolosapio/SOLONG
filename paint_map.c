@@ -37,4 +37,6 @@ void paint_map(mlx_t *mlx, t_map *map)
 		}
 		y += 32;
 	}
+
+	printf("Profundidad: %d\n", map->image_paviment->instances[0].x);
 }
