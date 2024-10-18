@@ -28,11 +28,20 @@ void paint_map(mlx_t *mlx, t_map *map)
 		while (x < map->width * 32)
 		{
 			if (map->str_map[y / 32][x / 32] == '0')
-				mlx_image_to_window(mlx, map->image_paviment, x, y);
+			{
+				int instance = mlx_image_to_window(mlx, map->image_paviment, x, y);
+				mlx_set_instance_depth(&map->image_paviment->instances[instance], 0);
+			}
 			if (map->str_map[y / 32][x / 32] == '1')
-				mlx_image_to_window(mlx, map->image_pc, x, y);
+			{
+				int instance = mlx_image_to_window(mlx, map->image_pc, x, y);
+				mlx_set_instance_depth(&map->image_pc->instances[instance], 0);
+			}
 			if (map->str_map[y / 32][x / 32] == 'C')
-				mlx_image_to_window(mlx, map->image_bottle, x, y);
+			{
+				int instance = mlx_image_to_window(mlx, map->image_bottle, x, y);
+				mlx_set_instance_depth(&map->image_bottle->instances[instance], 0);
+			}
 			x += 32;
 		}
 		y += 32;

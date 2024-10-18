@@ -13,8 +13,8 @@ t_player *init_player(mlx_t	*mlx)
     player->animation_status = 0;
     player->switch_button = 0;
 
-    breath(&textures);
-    walk(&textures);
+   breath(&textures);
+   walk(&textures);
 
     player->animations = malloc(sizeof(t_animation*) * player->number_of_animations);
 
@@ -43,7 +43,8 @@ t_player *init_player(mlx_t	*mlx)
     player->animations[PLAYER_DOWN]->speed_frame = 9;
     player->animations[PLAYER_DOWN]->image = player->image;
 
-    mlx_image_to_window(mlx, player->image, 0, 0); //llamada final paara ver el fotograma completo en ventana
-    //mlx_set_instance_depth(&player->image->instances[0], 10);
+    mlx_image_to_window(mlx, player->image, 0, 0);
+    mlx_set_instance_depth(&player->image->instances[0], 2);
+
 	return(player);
 }

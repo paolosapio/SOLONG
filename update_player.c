@@ -14,5 +14,7 @@ void update_player(t_player *player, t_map *map)
     if (player->switch_button == PLAYER_DOWN)
         move_down(player, map);
     if (query_map_coordinate(map, player->y + 16, player->x + 16) == 'C')
-            change_texture_map(map, player->y + 16, player->x + 16);
+    {
+        change_texture_map(map, player->y + 16, player->x + 16);
+    }
 }

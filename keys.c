@@ -14,7 +14,10 @@ void key_hook(mlx_key_data_t keydata, void* game2)
 		turbo_shift(game->player);
 	 }
 	 if (keydata.key == MLX_KEY_LEFT_SHIFT && keydata.action == MLX_RELEASE)
+	 {
+		normal_shift(game->player);
 	 	walking_speed(game->player);
+	 }
 
 	if (keydata.key == MLX_KEY_UP && keydata.action == MLX_PRESS)
 	{
