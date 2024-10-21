@@ -20,7 +20,6 @@ t_player *init_player(mlx_t	*mlx)
 
     player->animations[PLAYER_STOP_RIGHT] = init_animation(mlx, 6, textures.paths_breath_right);
     player->image = mlx_texture_to_image(mlx, player->animations[PLAYER_STOP_RIGHT]->textures[0]);
-//    mlx_resize_image(player->image, IMG_SIZE, IMG_SIZE * 2);
     player->animations[PLAYER_STOP_RIGHT]->speed_frame = 9;
     player->animations[PLAYER_STOP_RIGHT]->image = player->image;
 
@@ -43,9 +42,10 @@ t_player *init_player(mlx_t	*mlx)
     player->animations[PLAYER_DOWN] = init_animation(mlx, 4, textures.paths_walk_to_down);
     player->animations[PLAYER_DOWN]->speed_frame = 9;
     player->animations[PLAYER_DOWN]->image = player->image;
-
+    
     mlx_image_to_window(mlx, player->image, 0, 0);
     mlx_set_instance_depth(&player->image->instances[0], 2);
+    mlx_resize_image(player->image, IMG_SIZE, IMG_SIZE * 2);
 
 	return(player);
 }

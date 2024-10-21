@@ -33,10 +33,5 @@ int main (int argn, char **argv)
 	mlx_terminate(data.mlx);
 return (EXIT_SUCCESS);
 }
-//una funcion que reciba el mapa y una coordidas y qque cambie lo que haya en esta coordinada por la vldosa;
 
-
-
-//una funcion que detecte  si estoy en colision con el colectable;
-//una funcion cambie el caracter 'C' por el caracter '0';
-//una funcion que cconte cuantoo colectable has encontrado;
+//en initplayer     mlx_resize_image(player->image, IMG_SIZE, IMG_SIZE * 2); me revienta las animaciones!
