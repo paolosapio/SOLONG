@@ -5,11 +5,12 @@
 # include <stdlib.h>
 # include "animation.h"
 # include "map.h"
+
+# define PLAYER_STOP_RIGHT		0
 # define PLAYER_LEFT			1
 # define PLAYER_RIGHT			2
 # define PLAYER_UP				3
 # define PLAYER_DOWN			4
-# define PLAYER_STOP_RIGHT		0
 # define PLAYER_STOP_LEFT		5
 # define PLAYER_STOP_UP			6
 # define PLAYER_STOP_DOWN		7
@@ -53,6 +54,6 @@ int			is_collision_up(t_player *player, t_map *map);
 int			is_collision_down(t_player *player, t_map *map);
 int			is_collision_left(t_player *player, t_map *map);
 int			is_collision_right(t_player *player, t_map *map);
-void breath(t_textures_files *textures);
+void		breath(t_textures_files *textures);
 
 #endif

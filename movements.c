@@ -12,6 +12,7 @@ void turbo_shift(t_player *player)
 	player->animations[4]->speed_frame = 3;
 	player->speed = 10; 
 }
+
 void normal_shift(t_player *player)
 {
 	player->animations[0]->speed_frame = 9;

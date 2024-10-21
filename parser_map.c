@@ -15,7 +15,7 @@ t_parser *parser_map(char *path_map)
 		return (NULL); //liberar el mapa  **char (hacer una funcion qeu libera el pun ero doble)
 	if (check_closed_map(parser->str_map) == 1)
 		return (NULL); //liberar el mapa  **char (hacer una funcion qeu libera el pun ero doble)
-	if (flood_fill(parser->str_map) == 1)
+	if (flood_fill(parser) == 1)
 			return (NULL);
 	while (parser->str_map[y] != NULL)
 	{
@@ -25,13 +25,13 @@ t_parser *parser_map(char *path_map)
 			if (parser->str_map[y][x] == 'P')
 			{
 				parser->str_map[y][x] = '0';
-				parser->player.x = x * 32;
-				parser->player.y = y * 32;
+				parser->player.x = x * IMG_SIZE;
+				parser->player.y = y * IMG_SIZE;
 			}
 			if (parser->str_map[y][x] == 'E')
 			{
-				parser->exit.x = x * 32;
-				parser->exit.y = y * 32;
+				parser->exit.x = x * IMG_SIZE;
+				parser->exit.y = y * IMG_SIZE;
 			}
 			x++;
 		}
@@ -50,9 +50,7 @@ char **read_n_copy_map(char *path_map)
 	fd = open(path_map, O_RDONLY);
 	i = 0;
 	while (get_next_line(fd) != NULL)
-	{
 		i++;
-	}
 	str_map = malloc(sizeof(char*) * (i + 1));
 	k = i;
 	i = 0;

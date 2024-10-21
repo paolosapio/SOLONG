@@ -65,4 +65,8 @@ void key_hook(mlx_key_data_t keydata, void* game2)
 		game->player->switch_button = PLAYER_STOP_LEFT;
 		game->player->animation_status = PLAYER_STOP_LEFT;
 	}
+	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
+	{
+		exit(1);
+	}
 }

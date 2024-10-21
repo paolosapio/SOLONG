@@ -19,7 +19,8 @@ t_player *init_player(mlx_t	*mlx)
     player->animations = malloc(sizeof(t_animation*) * player->number_of_animations);
 
     player->animations[PLAYER_STOP_RIGHT] = init_animation(mlx, 6, textures.paths_breath_right);
-    player->image = mlx_texture_to_image(mlx, player->animations[PLAYER_STOP_RIGHT]->textures[0]); 
+    player->image = mlx_texture_to_image(mlx, player->animations[PLAYER_STOP_RIGHT]->textures[0]);
+//    mlx_resize_image(player->image, IMG_SIZE, IMG_SIZE * 2);
     player->animations[PLAYER_STOP_RIGHT]->speed_frame = 9;
     player->animations[PLAYER_STOP_RIGHT]->image = player->image;
 

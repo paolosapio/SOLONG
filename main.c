@@ -15,9 +15,8 @@ int main (int argn, char **argv)
 	parser = parser_map(argv[1]);
 	if (parser == NULL)
 		return (EXIT_FAILURE);
-
-	data.map = init_map(parser->str_map);
-	data.mlx = mlx_init(data.map->width * 32, data.map->height * 32, "HOLA JAVI", false);
+	data.map = init_map(parser);
+	data.mlx = mlx_init(data.map->width * IMG_SIZE, data.map->height * IMG_SIZE, "HOLA JAVI", false);
 	data.map->mlx = data.mlx;
 	if (!data.mlx)
 		return (0);

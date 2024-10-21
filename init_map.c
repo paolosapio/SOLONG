@@ -1,7 +1,8 @@
 #include "solong.h"
 #include "libft/libft.h"
+#include "parser.h"
 
-t_map *init_map(char **str_map)
+t_map *init_map(t_parser *parser)
 {
 	t_map	*map;
 	int		x;
@@ -9,13 +10,17 @@ t_map *init_map(char **str_map)
 	map = malloc(sizeof(t_map));
 	if(!map)
 		return (NULL);
-    map->width = ft_strlen(str_map[0]);
+    map->width = ft_strlen(parser->str_map[0]);
 	y = 0;
-	while (str_map[y] != NULL)
+	while (parser->str_map[y] != NULL)
 	{
 		y++;
 	}
 	map->height = y;
-	map->str_map = str_map;
+	map->str_map = parser->str_map;
+	map->total_collectables = parser->total_collectables;
+	map->collectables_to_take = 0;
+	printf("totales botellas: %d\n", map->total_collectables);
+
     return  (map);
 }

@@ -4,7 +4,7 @@
 
 char query_map_coordinate(t_map *map, int y, int x)
 {
-    y /= 32;
-    x /= 32;
+    y /= IMG_SIZE;
+    x /= IMG_SIZE;
     return (map->str_map[y][x]);
 }
