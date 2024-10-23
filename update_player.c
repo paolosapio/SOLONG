@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   update_player.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/23 19:42:36 by psapio            #+#    #+#             */
+/*   Updated: 2024/10/23 19:42:37 by psapio           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "player.h"
 
 void update_player(t_player *player, t_map *map)
 {	
     player->image->instances[0].x = player->x;
     player->image->instances[0].y = player->y - IMG_SIZE;
-    animation_update(player->animations[player->animation_status]);
+    animation_update(player->animations[player->anim_stat]);
     if (player->switch_button == PLAYER_LEFT)
         move_left(player, map);
     if (player->switch_button == PLAYER_RIGHT)

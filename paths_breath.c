@@ -2,5 +2,5 @@
 
 void path_breath(t_player *player)
 {
-    player->animation_status = 0;
+    player->anim_stat = 0;
 }

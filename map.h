@@ -30,5 +30,4 @@ void		paint_map(mlx_t *mlx, t_map *map);
 char		query_map_coordinate(t_map *map, int y, int x);
 int32_t		change_texture_map(t_map *map, int y, int x);
 
-
 #endif

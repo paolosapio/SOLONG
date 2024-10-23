@@ -22,48 +22,48 @@ void key_hook(mlx_key_data_t keydata, void* game2)
 	if (keydata.key == MLX_KEY_UP && keydata.action == MLX_PRESS)
 	{
 		game->player->switch_button = PLAYER_UP;
-		game->player->animation_status = PLAYER_UP;
+		game->player->anim_stat = PLAYER_UP;
 	}
 	if (keydata.key == MLX_KEY_UP && keydata.action == MLX_RELEASE)
 	{
 		game->player->switch_button = PLAYER_STOP_UP;
-		game->player->animation_status = PLAYER_STOP_RIGHT;
+		game->player->anim_stat = PLAYER_STOP_RIGHT;
 	}
 
 
 	if (keydata.key == MLX_KEY_DOWN && keydata.action == MLX_PRESS)
 	{
 		game->player->switch_button = PLAYER_DOWN;
-		game->player->animation_status = PLAYER_DOWN;
+		game->player->anim_stat = PLAYER_DOWN;
 	}
 	if (keydata.key == MLX_KEY_DOWN && keydata.action == MLX_RELEASE)
 	{
 		game->player->switch_button = PLAYER_STOP_DOWN;
-		game->player->animation_status = PLAYER_STOP_RIGHT;
+		game->player->anim_stat = PLAYER_STOP_RIGHT;
 	}
 
 
 	if (keydata.key == MLX_KEY_RIGHT && keydata.action == MLX_PRESS)
 	{
 		game->player->switch_button = PLAYER_RIGHT;
-		game->player->animation_status = PLAYER_RIGHT;
+		game->player->anim_stat = PLAYER_RIGHT;
 	}
 	if (keydata.key == MLX_KEY_RIGHT && keydata.action == MLX_RELEASE)
 	{
 		game->player->switch_button = PLAYER_STOP_RIGHT;
-		game->player->animation_status = PLAYER_STOP_RIGHT;
+		game->player->anim_stat = PLAYER_STOP_RIGHT;
 	}
 
 
 	if (keydata.key == MLX_KEY_LEFT && keydata.action == MLX_PRESS)
 	{
 		game->player->switch_button = PLAYER_LEFT;
-		game->player->animation_status = PLAYER_LEFT;
+		game->player->anim_stat = PLAYER_LEFT;
 	}
 	if (keydata.key == MLX_KEY_LEFT && keydata.action == MLX_RELEASE)
 	{
 		game->player->switch_button = PLAYER_STOP_LEFT;
-		game->player->animation_status = PLAYER_STOP_LEFT;
+		game->player->anim_stat = PLAYER_STOP_LEFT;
 	}
 	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
 	{

@@ -21,8 +21,8 @@ typedef struct	s_player
 	int				y;
 	int				speed;
 	t_animation		**animations;
-	int				number_of_animations;
-	int				animation_status;
+	int				n_anim;
+	int				anim_stat;
 	mlx_image_t		*image;
 	int				switch_button;
 	t_hitbox		hitbox;
