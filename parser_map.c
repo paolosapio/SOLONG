@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parser_map.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/24 16:18:07 by psapio            #+#    #+#             */
+/*   Updated: 2024/10/24 16:50:13 by psapio           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "parser.h"
 #include "solong.h"
+#include "map.h"
 #include "libft/libft.h"
 
 t_parser *parser_map(char *path_map)
@@ -20,8 +33,6 @@ t_parser *parser_map(char *path_map)
 		return (NULL); //liberar el mapa  **char (hacer una funcion qeu libera el pun ero doble)
 	if (flood_fill(parser) == 1)
 			return (NULL);
-
-
 	while (parser->str_map[y] != NULL)
 	{
 		x = 0;

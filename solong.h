@@ -6,7 +6,7 @@
 /*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:53:06 by psapio            #+#    #+#             */
-/*   Updated: 2024/10/24 13:00:33 by psapio           ###   ########.fr       */
+/*   Updated: 2024/10/24 17:39:43 by psapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ void	key_hook(mlx_key_data_t keydata, void *data2);
 char	**read_n_copy_map(char *path_map);
 void	update_game(void *game);
 void	destroy_all(t_game data);
+void	res_check(t_game  data);
 
 #endif
