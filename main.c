@@ -28,9 +28,7 @@ int main (int argn, char **argv)
 	mlx_loop_hook(data.mlx, update_game, &data);
 	mlx_key_hook(data.mlx, key_hook, &data);
 	mlx_loop(data.mlx);
-	destroy_map(data.map);
-	destroy_player(data.mlx, data.player);
-	mlx_terminate(data.mlx);
+	destroy_all(data);
 return (EXIT_SUCCESS);
 }
 

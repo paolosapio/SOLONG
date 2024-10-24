@@ -1,6 +1,7 @@
 #include "parser.h"
 #include "solong.h"
 #include "libft/libft.h"
+
 t_parser *parser_map(char *path_map)
 {
 	t_parser *parser;
@@ -11,12 +12,16 @@ t_parser *parser_map(char *path_map)
 	y = 0;
 	parser = malloc(sizeof(t_parser));
 	parser->str_map = read_n_copy_map(path_map);
+	if (check_chars_map(parser->str_map) == 1)
+			return (NULL);
 	if (check_rectangle_map(parser->str_map) == 1)
 		return (NULL); //liberar el mapa  **char (hacer una funcion qeu libera el pun ero doble)
 	if (check_closed_map(parser->str_map) == 1)
 		return (NULL); //liberar el mapa  **char (hacer una funcion qeu libera el pun ero doble)
 	if (flood_fill(parser) == 1)
 			return (NULL);
+
+
 	while (parser->str_map[y] != NULL)
 	{
 		x = 0;
@@ -114,6 +119,28 @@ int check_closed_map(char **map)
 		if (map[y][x] != '1')
 			return (1);
 		x++;
+	}
+	return (0);
+}
+int	check_chars_map(char **path_map)
+{
+	int x;
+	int y;
+
+	x = 0;
+	y = 0;
+	while (path_map[y] != NULL)
+	{
+		x = 0;
+		while (path_map[y][x] != '\0') 
+		{
+			if (ft_strchr("01PEC", path_map[y][x]) == NULL)
+			{
+				return (1);
+			}
+			x++;
+		}
+		y++;
 	}
 	return (0);
 }

@@ -1,6 +1,9 @@
 #include "solong.h"
 
-void update_game(t_game *game)
+void update_game(void *game)
 {
-    update_player(game->player, game->map);
+    t_game *game1;
+
+    game1 = (t_game *)game;
+    update_player(game1->player, game1->map);
 }

@@ -6,7 +6,7 @@
 /*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 19:42:52 by psapio            #+#    #+#             */
-/*   Updated: 2024/10/23 19:48:37 by psapio           ###   ########.fr       */
+/*   Updated: 2024/10/24 12:18:18 by psapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ t_player	*init_player(mlx_t	*mlx)
 	player->y = 0;
 	player->speed = 3;
 	player->n_anim = 6;
-	player->n_anim = 0;
+	player->anim_stat = 0;
 	player->switch_button = 0;
 	breath(&textures);
 	walk(&textures);

@@ -55,5 +55,8 @@ int			is_collision_down(t_player *player, t_map *map);
 int			is_collision_left(t_player *player, t_map *map);
 int			is_collision_right(t_player *player, t_map *map);
 void		breath(t_textures_files *textures);
+void		walk(t_textures_files *textures);
+void		normal_shift(t_player *player);
+
 
 #endif
