@@ -6,7 +6,7 @@
 /*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:18:07 by psapio            #+#    #+#             */
-/*   Updated: 2024/10/29 12:56:07 by psapio           ###   ########.fr       */
+/*   Updated: 2024/10/29 16:06:15 by psapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ t_parser *parser_map(char *path_map)
 		return (NULL); //liberar el mapa  **char (hacer una funcion qeu libera el pun ero doble)
 	if (flood_fill(parser) == 1)
 		return (NULL);
-	// ft_print_error("hola");
 	
 	while (parser->str_map[y] != NULL)
 	{
@@ -60,32 +59,40 @@ char **read_n_copy_map(char *path_map)
 {
 	int fd;
 	int i;
-	int k;
 	char **str_map;
 	char *aux;
+	char *line;
+	
 	fd = open(path_map, O_RDONLY);
-	if (fd <= 0)
-		ft_putstr_fd("Err: file map problem", fd);
+	if (fd < 0)
+		ft_print_error("can't open file");
 	i = 0;
-	while (get_next_line(fd) != NULL)
+	while (1)
+	{
+		line = get_next_line(fd);
+		if (line == NULL)
+			break ;
+		free (line);
 		i++;
+	}
 	str_map = malloc(sizeof(char*) * (i + 1));
-	k = i;
 	i = 0;
 	close(fd);
 	fd = open(path_map, O_RDONLY);
-	while (i < k)
+	while (1)
 	{
 		aux = get_next_line(fd);
 		str_map[i] = ft_strtrim(aux, "\n");
+		if (str_map[i] == NULL)
+			break ;
 		free(aux);
 		printf("%s\n", str_map[i]);
 		i++;
 	}
 	close(fd);
-	str_map[i] = NULL;
 	return(str_map);
 }
+
 int check_rectangle_map(char **map)
 {
 	int i;
@@ -135,6 +142,7 @@ int check_closed_map(char **map)
 	}
 	return (0);
 }
+
 int	check_chars_map(char **path_map)
 {
 	int x;

@@ -25,30 +25,35 @@ LIBS	+=	$(LIBFT)/libft.a
 
 SRCS =						\
 		srcs/main.c			\
-		srcs/animation_next_texture.c \
-		srcs/animations_player.c \
-		srcs/animation_update.c \
-		srcs/check_map.c \
-		srcs/check_res.c \
-		srcs/collisions.c \
-		srcs/destroy_all.c \
-		srcs/destroy_animation.c \
-		srcs/destroy_map.c \
-		srcs/destroy_player.c \
-		srcs/if_colectable.c \
-		srcs/init_animation.c \
-		srcs/init_map.c \
-		srcs/init_player.c \
-		srcs/keys.c \
-		srcs/movements.c \
-		srcs/paint_map.c \
-		srcs/parser_map.c \
-		srcs/paths_breath.c \
-		srcs/print_error.c \
-		srcs/query_map_coordinate.c \
-		srcs/speed_movements.c \
-		srcs/update_game.c \
-		srcs/update_player.c \
+							\
+		srcs/animations/animation_next_texture.c \
+		srcs/animations/animations_player.c \
+		srcs/animations/animation_update.c \
+							\
+		srcs/animations/destroy_animation.c \
+		srcs/animations/init_animation.c \
+		srcs/animations/paths_breath.c \
+							\
+		srcs/player/collisions.c \
+		srcs/player/destroy_player.c \
+		srcs/player/init_player.c \
+		srcs/player/movements.c \
+		srcs/player/speed_movements.c \
+		srcs/player/update_player.c \
+							\
+		srcs/map/check_map.c \
+		srcs/map/check_res.c \
+		srcs/map/destroy_map.c \
+		srcs/map/init_map.c \
+		srcs/map/paint_map.c \
+		srcs/map/parser_map.c \
+		srcs/map/query_map_coordinate.c \
+							\
+		srcs/other/destroy_all.c \
+		srcs/other/if_colectable.c \
+		srcs/other/keys.c \
+		srcs/other/print_error.c \
+		srcs/other/update_game.c \
 
 
 
@@ -58,7 +63,7 @@ DEPS = $(OBJS:.o=.d)
 all: libmlx libft $(NAME)
 
 libmlx:
-	@cmake -DDEBUG=0 $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4
+	@cmake -DDEBUG=1 $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4
 
 libft:
 	@make -C $(LIBFT)

@@ -6,7 +6,7 @@
 /*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:58:24 by psapio            #+#    #+#             */
-/*   Updated: 2024/10/29 12:47:38 by psapio           ###   ########.fr       */
+/*   Updated: 2024/10/29 14:40:38 by psapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int argn, char **argv)
 	paint_map(data.mlx, data.map);
 	data.player = init_player(data.mlx);
 	data.player->x = parser->player.x;
-	data.player->y = parser->player.y;
+	data.player->y = parser->player.y - 1;
 	mlx_loop_hook(data.mlx, update_game, &data);
 	mlx_key_hook(data.mlx, key_hook, &data);
 	mlx_loop(data.mlx);

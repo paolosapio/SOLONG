@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_map.c                                         :+:      :+:    :+:   */
+/*   destroy_all.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 18:26:33 by psapio            #+#    #+#             */
-/*   Updated: 2024/10/29 12:58:21 by psapio           ###   ########.fr       */
+/*   Created: 2024/10/23 18:10:25 by psapio            #+#    #+#             */
+/*   Updated: 2024/10/29 15:46:37 by psapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "solong.h"
 
-
-t_map	*init_map(t_parser *parser)
+void	destroy_all(t_game data)
 {
-	t_map	*map;
-	int		y;
-
-	map = malloc(sizeof(t_map));
-	if (!map)
-		return (NULL);
-	map->width = ft_strlen(parser->str_map[0]);
-	y = 0;
-	while (parser->str_map[y] != NULL)
-	{
-		y++;
-	}
-	map->height = y;
-	map->str_map = parser->str_map;
-	map->total_collectables = parser->total_collectables;
-	map->collectables_to_take = 0;
-	return (map);
+	destroy_map(data.map);
+	// destroy_player(data.mlx, data.player);
+	// free(data.player->image);
+	mlx_terminate(data.mlx);
 }

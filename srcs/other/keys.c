@@ -6,7 +6,7 @@
 /*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:44:06 by psapio            #+#    #+#             */
-/*   Updated: 2024/10/29 12:55:54 by psapio           ###   ########.fr       */
+/*   Updated: 2024/10/29 15:53:51 by psapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	key_press(mlx_key_data_t keydata, t_game *game)
 	}
 	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
 	{
-		destroy_all(*game);
+		//destroy_all(*game);
 		exit(0);
 	}
 }

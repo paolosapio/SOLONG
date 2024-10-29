@@ -12,6 +12,6 @@ void turbo_shift(t_player *player)
 }
 void walking_speed(t_player *player)
 { 
-	player->animations[0]->speed_frame = 17;
+	player->animations[0]->speed_frame = 9;
 	player->speed = 3;
 }

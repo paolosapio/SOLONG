@@ -6,7 +6,7 @@
 /*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 17:38:54 by psapio            #+#    #+#             */
-/*   Updated: 2024/10/29 12:55:02 by psapio           ###   ########.fr       */
+/*   Updated: 2024/10/29 14:38:32 by psapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,7 @@ int	is_collision_left(t_player *player, t_map *map)
 	char	corner_left_up;
 	char	corner_left_down;
 
-	corner_left_up = query_map_coordinate
-		(map, player->y + IMG_SIZE / 2, player->x - player->speed + 7);
+	corner_left_up = query_map_coordinate(map, player->y + IMG_SIZE / 2, player->x - player->speed + 7);
 	corner_left_down = query_map_coordinate
 		(map, player->y + IMG_SIZE, player->x - player->speed + 7);
 	if (corner_left_up == '1')
