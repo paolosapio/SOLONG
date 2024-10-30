@@ -62,7 +62,7 @@ DEPS = $(OBJS:.o=.d)
 all: libmlx libft $(NAME)
 
 libmlx:
-	@cmake -DDEBUG=1 $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4
+	@cmake -DDEBUG=0 $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4
 
 libft:
 	@make -C $(LIBFT)

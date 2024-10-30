@@ -6,13 +6,13 @@
 /*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:18:24 by psapio            #+#    #+#             */
-/*   Updated: 2024/10/30 14:08:32 by psapio           ###   ########.fr       */
+/*   Updated: 2024/10/30 17:19:23 by psapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "solong.h"
 
-t_animation	*init_animation(t_animation *animation, mlx_t *mlx, int n_frames, char **pat_png)
+void	init_animation(t_animation *animation, mlx_t *mlx, int n_frames, char **pat_png)
 {
 	int			i;
 
@@ -28,5 +28,4 @@ t_animation	*init_animation(t_animation *animation, mlx_t *mlx, int n_frames, ch
 	animation->current_frame_total_game = 0;
 	animation->total_texture = n_frames;
 	animation->current_texture = 0;
-	return (animation);
 }

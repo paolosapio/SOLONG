@@ -6,7 +6,7 @@
 /*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:10:25 by psapio            #+#    #+#             */
-/*   Updated: 2024/10/30 14:05:47 by psapio           ###   ########.fr       */
+/*   Updated: 2024/10/30 16:35:25 by psapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	destroy_animation(mlx_t *mlx, t_animation *animation)
 	i = 0;
 	while (i < animation->total_texture)
 	{
-		mlx_delete_texture(animation->textures[i]);
+	//	mlx_delete_texture(animation->textures[i]);
 		i++;
 	}
 	// mlx_delete_image(mlx, animation->image);
-	free (animation->textures);
+	//free (animation->textures);
 	// free (animation);
 }

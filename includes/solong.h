@@ -6,7 +6,7 @@
 /*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:53:06 by psapio            #+#    #+#             */
-/*   Updated: 2024/10/30 13:59:35 by psapio           ###   ########.fr       */
+/*   Updated: 2024/10/30 16:59:26 by psapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,10 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-
 # include "MLX42/MLX42.h"
 # include "libft.h"
 
-
-typedef struct game t_game;
+typedef struct	game t_game;
 typedef struct	s_parser t_parser;
 
 
@@ -35,25 +33,26 @@ typedef struct	s_map
 	mlx_image_t		*image_bottle;
 	mlx_t			*mlx;
 	int				width;
-	int	    		height;
-	char    		**str_map;
+	int				height;
+	char			**str_map;
 	int				total_collectables;
 	int				collectables_to_take;
 }   t_map;
 
 typedef struct	s_hitbox
 {
-	int	    width;
-	int	    height;
+	int	width;
+	int	height;
 }   t_hitbox;
 
 
 void		init_map(t_game *data, t_parser *parser);
-void        destroy_map(t_map *map);
+void		destroy_map(t_map *map);
 void		paint_map(mlx_t *mlx, t_map *map);
 char		query_map_coordinate(t_map *map, int y, int x);
 int32_t		change_texture_map(t_map *map, int y, int x);
 int			check_chars_map(char **path_map);
+
 
 /* ANIMATIONS */
 typedef struct s_animation
@@ -66,11 +65,11 @@ typedef struct s_animation
 	int				current_frame_total_game;
 }               t_animation;
 
-// t_animation	*init_animation(mlx_t *mlx, int n_frames, char **pat_png);
-t_animation	*init_animation(t_animation *animation, mlx_t *mlx, int n_frames, char **pat_png);
-void		animation_next_texture(t_animation *animation);
-void		animation_update(t_animation *animation);
-void		destroy_animation(mlx_t *mlx, t_animation *animation);
+void	init_animation(t_animation *animation, mlx_t *mlx, int n_frames, char **pat_png);
+void	animation_next_texture(t_game *game, t_animation *animation);
+void	animation_update(t_game *game, t_animation *animation);
+void	destroy_animation(mlx_t *mlx, t_animation *animation);
+
 
 /* PLAYER */
 # define PLAYER_STOP_RIGHT		0
@@ -98,17 +97,16 @@ typedef struct	s_player
 
 typedef struct s_textures_files
 {
-	char        *paths_walk_to_up[5];
-    char        *paths_walk_to_down[4];
-    char        *paths_walk_to_right[8];
-    char        *paths_walk_to_left[8];
-    char        *paths_breath_left[6];
-    char        *paths_breath_right[6];
+	char	*paths_walk_to_up[5];
+	char	*paths_walk_to_down[4];
+	char	*paths_walk_to_right[8];
+	char	*paths_walk_to_left[8];
+	char	*paths_breath_left[6];
+	char	*paths_breath_right[6];
 
 }	t_textures_files;
 
 void	init_player(t_game *data);
-
 void	destroy_player(mlx_t *mlx, t_player *player);
 void	turbo_shift(t_player *player);
 void	move_up(t_player *player, t_map *map);
@@ -116,7 +114,7 @@ void	move_down(t_player *player, t_map *map);
 void	move_left(t_player *player, t_map *map);
 void	move_right(t_player *player, t_map *map);
 void	walking_speed(t_player *player);
-void	update_player(t_player *player, t_map *map);
+void	update_player(t_game *game, t_player *player, t_map *map);
 int		is_collision_up(t_player *player, t_map *map);
 int		is_collision_down(t_player *player, t_map *map);
 int		is_collision_left(t_player *player, t_map *map);
@@ -128,14 +126,16 @@ void	normal_shift(t_player *player);
 /* COORDINATE */
 typedef struct s_coordinate
 {
-    int x;
-    int y;
-}   t_coordinate;
+	int x;
+	int y;
+} 
+	t_coordinate;
 
 typedef struct s_collectible
 {
-    int count;
-}   t_collectible;
+	int count;
+}	t_collectible;
+
 
 /* PARSER */
 typedef struct	s_parser
@@ -144,12 +144,13 @@ typedef struct	s_parser
 	t_coordinate	exit;
 	char			**str_map;
 	int				total_collectables;
-}   t_parser;
+}	t_parser;
 
 void	parser_map(t_parser *parser, char *path_map);
 int		check_rectangle_map(char **map);
 int		check_closed_map(char **map);
 bool	flood_fill(t_parser *parser);
+
 
 /* BLOCK */
 typedef struct	s_block
@@ -160,6 +161,7 @@ typedef struct	s_block
 	int				collision;
 	
 }					t_block;
+
 
 /* GAME */
 typedef struct game

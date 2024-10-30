@@ -6,7 +6,7 @@
 /*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:58:24 by psapio            #+#    #+#             */
-/*   Updated: 2024/10/30 13:35:22 by psapio           ###   ########.fr       */
+/*   Updated: 2024/10/30 16:22:17 by psapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int	main(int argn, char **argv)
 	mlx_loop_hook(data.mlx, update_game, &data);
 	mlx_key_hook(data.mlx, key_hook, &data);
 	mlx_loop(data.mlx);
+	printf("Equis\n");
 	destroy_all(&data);
 	return (EXIT_SUCCESS);
 }
