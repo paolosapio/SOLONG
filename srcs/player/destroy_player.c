@@ -6,7 +6,7 @@
 /*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:15:26 by psapio            #+#    #+#             */
-/*   Updated: 2024/10/29 15:42:53 by psapio           ###   ########.fr       */
+/*   Updated: 2024/10/30 14:06:24 by psapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	destroy_player(mlx_t *mlx, t_player *player)
 	i = 0;
 	while (i < player->n_anim)
 	{
-		destroy_animation(mlx, player->animations[i]);
+		// destroy_animation(mlx, player->animations[i]);
 		i++;
 	}
 	// free(player->animations);

@@ -6,32 +6,29 @@
 /*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:18:07 by psapio            #+#    #+#             */
-/*   Updated: 2024/10/29 16:06:15 by psapio           ###   ########.fr       */
+/*   Updated: 2024/10/30 13:35:37 by psapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "solong.h"
 
 
-t_parser *parser_map(char *path_map)
+void parser_map(t_parser *parser, char *path_map)
 {
-	t_parser *parser;
 	int x;
 	int y;
 
 	x = 0;
 	y = 0;
-	parser = malloc(sizeof(t_parser));
 	parser->str_map = read_n_copy_map(path_map);
 	if (check_chars_map(parser->str_map) == 1)
-		return (NULL);
+		ft_print_error("Parser map error");
 	if (check_rectangle_map(parser->str_map) == 1)
-		return (NULL); //liberar el mapa  **char (hacer una funcion qeu libera el pun ero doble)
+		ft_print_error("Parser map error"); //liberar el mapa  **char (hacer una funcion qeu libera el pun ero doble)
 	if (check_closed_map(parser->str_map) == 1)
-		return (NULL); //liberar el mapa  **char (hacer una funcion qeu libera el pun ero doble)
+		ft_print_error("Parser map error"); //liberar el mapa  **char (hacer una funcion qeu libera el pun ero doble)
 	if (flood_fill(parser) == 1)
-		return (NULL);
-	
+		ft_print_error("Parser map error");
 	while (parser->str_map[y] != NULL)
 	{
 		x = 0;
@@ -52,7 +49,6 @@ t_parser *parser_map(char *path_map)
 		}
 		y++;
 	}
-	return (parser);
 }
 
 char **read_n_copy_map(char *path_map)

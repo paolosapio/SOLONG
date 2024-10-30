@@ -6,20 +6,18 @@
 /*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:18:24 by psapio            #+#    #+#             */
-/*   Updated: 2024/10/29 12:57:27 by psapio           ###   ########.fr       */
+/*   Updated: 2024/10/30 14:08:32 by psapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "solong.h"
 
-t_animation	*init_animation(mlx_t *mlx, int n_frames, char **pat_png)
+t_animation	*init_animation(t_animation *animation, mlx_t *mlx, int n_frames, char **pat_png)
 {
-	t_animation	*animation;
 	int			i;
 
 	(void)mlx;
 	i = 0;
-	animation = malloc(sizeof(t_animation));
 	animation->textures = malloc(n_frames * sizeof(mlx_texture_t *));
 	while (i < n_frames)
 	{

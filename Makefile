@@ -32,7 +32,6 @@ SRCS =						\
 							\
 		srcs/animations/destroy_animation.c \
 		srcs/animations/init_animation.c \
-		srcs/animations/paths_breath.c \
 							\
 		srcs/player/collisions.c \
 		srcs/player/destroy_player.c \

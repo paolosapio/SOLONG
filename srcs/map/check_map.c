@@ -6,7 +6,7 @@
 /*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:59:19 by psapio            #+#    #+#             */
-/*   Updated: 2024/10/29 12:54:31 by psapio           ###   ########.fr       */
+/*   Updated: 2024/10/30 12:49:56 by psapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,6 @@ int count_collectables_map(t_parser *parser)
 	int y;
 
 	ft_bzero(&counts, sizeof(counts));
-	// counts[0], counts[1], counts[2] = 0;
-	// counts[0] = 0;
-	// counts[1] = 0;
-	// counts[2] = 0;
 	y = 0;
 	while (parser->str_map[y] != NULL)
 	{

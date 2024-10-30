@@ -6,7 +6,7 @@
 /*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:13:00 by psapio            #+#    #+#             */
-/*   Updated: 2024/10/29 12:55:21 by psapio           ###   ########.fr       */
+/*   Updated: 2024/10/30 13:05:29 by psapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ void	destroy_map(t_map *map)
 		y++;
 	}
 	free(map->str_map);
-	free(map);
+	// free(map);
 }

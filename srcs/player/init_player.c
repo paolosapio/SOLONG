@@ -6,72 +6,61 @@
 /*   By: psapio <psapio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 19:42:52 by psapio            #+#    #+#             */
-/*   Updated: 2024/10/29 14:26:05 by psapio           ###   ########.fr       */
+/*   Updated: 2024/10/30 14:05:02 by psapio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "solong.h"
 
-
 void	player_stop_lr(mlx_t *mlx, t_player *player, t_textures_files textures)
 {
-	player->animations[PLAYER_STOP_RIGHT]
-		= init_animation(mlx, 6, textures.paths_breath_right);
-	player->image = mlx_texture_to_image
-		(mlx, player->animations[PLAYER_STOP_RIGHT]->textures[0]);
-	player->animations[PLAYER_STOP_RIGHT]->speed_frame = 9;
-	player->animations[PLAYER_STOP_RIGHT]->image = player->image;
-	player->animations[PLAYER_STOP_LEFT]
-		= init_animation(mlx, 6, textures.paths_breath_left);
-	player->animations[PLAYER_STOP_LEFT]->speed_frame = 9;
-	player->animations[PLAYER_STOP_LEFT]->image = player->image;
+	init_animation(&player->animations[PLAYER_STOP_RIGHT], mlx, 6, textures.paths_breath_right);
+	player->animations[PLAYER_STOP_RIGHT].speed_frame = 9;
+	player->image = mlx_texture_to_image(mlx, player->animations[PLAYER_STOP_RIGHT].textures[0]);
+	player->animations[PLAYER_STOP_RIGHT].image = player->image;
+
+	init_animation(&player->animations[PLAYER_STOP_LEFT], mlx, 6, textures.paths_breath_left);
+	player->animations[PLAYER_STOP_LEFT].speed_frame = 9;
+	player->animations[PLAYER_STOP_LEFT].image = player->image;
 }
 
 void	player_lr(mlx_t *mlx, t_player *player, t_textures_files textures)
 {
-	player->animations[PLAYER_LEFT]
-		= init_animation(mlx, 8, textures.paths_walk_to_left);
-	player->animations[PLAYER_LEFT]->speed_frame = 9;
-	player->animations[PLAYER_LEFT]->image = player->image;
-	player->animations[PLAYER_RIGHT]
-		= init_animation(mlx, 8, textures.paths_walk_to_right);
-	player->animations[PLAYER_RIGHT]->speed_frame = 9;
-	player->animations[PLAYER_RIGHT]->image = player->image;
+	init_animation(&player->animations[PLAYER_LEFT], mlx, 8, textures.paths_walk_to_left);
+	player->animations[PLAYER_LEFT].speed_frame = 9;
+	player->animations[PLAYER_LEFT].image = player->image;
+	init_animation(&player->animations[PLAYER_RIGHT], mlx, 8, textures.paths_walk_to_right);
+	player->animations[PLAYER_RIGHT].speed_frame = 9;
+	player->animations[PLAYER_RIGHT].image = player->image;
 }
 
 void	player_ud(mlx_t *mlx, t_player *player, t_textures_files textures)
 {
-	player->animations[PLAYER_UP]
-		= init_animation(mlx, 5, textures.paths_walk_to_up);
-	player->animations[PLAYER_UP]->speed_frame = 9;
-	player->animations[PLAYER_UP]->image = player->image;
-	player->animations[PLAYER_DOWN]
-		= init_animation(mlx, 4, textures.paths_walk_to_down);
-	player->animations[PLAYER_DOWN]->speed_frame = 9;
-	player->animations[PLAYER_DOWN]->image = player->image;
+	
+	init_animation(&player->animations[PLAYER_UP], mlx, 5, textures.paths_walk_to_up);
+	player->animations[PLAYER_UP].speed_frame = 9;
+	player->animations[PLAYER_UP].image = player->image;
+	
+	init_animation(&player->animations[PLAYER_DOWN], mlx, 4, textures.paths_walk_to_down);
+	player->animations[PLAYER_DOWN].speed_frame = 9;
+	player->animations[PLAYER_DOWN].image = player->image;
 }
 
-t_player	*init_player(mlx_t	*mlx)
+void init_player(t_game *data)
 {
 	t_player			*player;
 	t_textures_files	textures;
 
-	player = malloc(sizeof(t_player));
-	player->x = 0;
-	player->y = 0;
+	player = &data->player;
 	player->speed = 3;
 	player->n_anim = 6;
-	player->anim_stat = 0;
-	player->switch_button = 0;
-	player->steps = 0;
 	breath(&textures);
 	walk(&textures);
-	player->animations = malloc(sizeof(t_animation *) * player->n_anim);
-	player_stop_lr(mlx, player, textures);
-	player_lr(mlx, player, textures);
-	player_ud(mlx, player, textures);
-	mlx_image_to_window(mlx, player->image, 0, 0);
+	player->animations = malloc(sizeof(t_animation) * player->n_anim);
+	player_stop_lr(data->mlx, player, textures);
+	player_lr(data->mlx, player, textures);
+	player_ud(data->mlx, player, textures);
+	mlx_image_to_window(data->mlx, player->image, 0, 0);
 	mlx_set_instance_depth(&player->image->instances[0], 2);
 	mlx_resize_image(player->image, IMG_SIZE, IMG_SIZE * 2);
-	return (player);
 }
